@@ -9,9 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@langchain/core": "^1.1.32",
+    "@langchain/google": "^0.1.6",
+    "dotenv": "^17.3.1",
+    "langchain": "^1.2.32",
     "next": "16.1.6",
+    "next-auth": "^4.24.13",
+    "prisma": "^7.5.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -22,5 +29,6 @@
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "type": "module"
 }
