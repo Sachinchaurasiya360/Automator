@@ -15,7 +15,7 @@ const chat = new ChatGoogle({
       category: "HARM_CATEGORY_HARASSMENT",
       threshold: "BLOCK_LOW_AND_ABOVE",
     },
-    //We can bind tools and use it like the google search tools , weather tools and other tools 
+    //We can bind tools and use it like the google search tools , whether tools and other tools 
   ],
 });
 

@@ -119,7 +119,7 @@ export function DashboardContent() {
               </CardHeader>
               <CardContent>
                 <Link
-                  href={`/project/${project.id}`}
+                  href={`/workflow/${project.id}`}
                   className="text-sm text-blue-500 hover:underline"
                 >
                   View Project
