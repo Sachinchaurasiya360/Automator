@@ -6,18 +6,26 @@ export function Navbar() {
   const { data: session } = useSession();
 
   return (
-    <nav className="flex justify-center px-4 pt-3">
-      <div className="flex w-full max-w-5xl items-center justify-between rounded-xl border border-white/10 bg-zinc-900 px-6 py-3 shadow-lg">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-white">
-          Automator
+    <nav className="border-b border-stone-900/10 bg-[#f6f4ee]">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
+        <Link
+          href="/"
+          className="flex items-baseline gap-3 text-stone-900"
+        >
+          <span className="[font-family:var(--font-display)] text-2xl tracking-tight">
+            Automator
+          </span>
+          <span className="hidden [font-family:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-stone-500 sm:inline">
+            / MMXXVI
+          </span>
         </Link>
 
         {session ? (
-          <ul className="flex items-center gap-6 list-none">
+          <ul className="flex list-none items-center gap-10">
             <li>
               <Link
                 href="/dashboard"
-                className="text-sm text-zinc-400 transition-colors hover:text-white"
+                className="[font-family:var(--font-mono)] text-[11px] uppercase tracking-[0.22em] text-stone-600 transition-colors hover:text-stone-900"
               >
                 Dashboard
               </Link>
@@ -25,44 +33,44 @@ export function Navbar() {
             <li>
               <Link
                 href="/contact"
-                className="text-sm text-zinc-400 transition-colors hover:text-white"
+                className="[font-family:var(--font-mono)] text-[11px] uppercase tracking-[0.22em] text-stone-600 transition-colors hover:text-stone-900"
               >
-                Contact us
+                Contact
               </Link>
             </li>
             <li>
               <button
                 onClick={() => signOut({ callbackUrl: "/" })}
-                className="rounded-lg bg-white px-4 py-1.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-200"
+                className="[font-family:var(--font-mono)] border-b border-stone-900 pb-0.5 text-[11px] uppercase tracking-[0.22em] text-stone-900 transition-opacity hover:opacity-60"
               >
-                Log out
+                Sign out
               </button>
             </li>
           </ul>
         ) : (
-          <ul className="flex items-center gap-6 list-none">
-            <li>
+          <ul className="flex list-none items-center gap-10">
+            <li className="hidden sm:block">
               <Link
                 href="/"
-                className="text-sm text-zinc-400 transition-colors hover:text-white"
+                className="[font-family:var(--font-mono)] text-[11px] uppercase tracking-[0.22em] text-stone-600 transition-colors hover:text-stone-900"
               >
-                Home
+                Index
               </Link>
             </li>
             <li>
               <Link
                 href="/auth/login"
-                className="text-sm text-zinc-400 transition-colors hover:text-white"
+                className="[font-family:var(--font-mono)] text-[11px] uppercase tracking-[0.22em] text-stone-600 transition-colors hover:text-stone-900"
               >
-                Login
+                Sign in
               </Link>
             </li>
             <li>
               <Link
                 href="/auth/signup"
-                className="rounded-lg bg-white px-4 py-1.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-200"
+                className="[font-family:var(--font-mono)] border-b border-stone-900 pb-0.5 text-[11px] uppercase tracking-[0.22em] text-stone-900 transition-opacity hover:opacity-60"
               >
-                Sign up
+                Begin
               </Link>
             </li>
           </ul>

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useCallback } from "react";
+import { ChevronLeft } from "lucide-react";
 import { RightPanel } from "./workflow/rightPanel";
 import {
   ReactFlow,
@@ -30,6 +31,7 @@ const initialEdges: FlowEdge[] = [{ id: "n1-n2", source: "n1", target: "n2" }];
 export default function WorkFlowUi() {
   const [nodes, setNodes] = useState<FlowNode[]>(initialNodes);
   const [edges, setEdges] = useState<FlowEdge[]>(initialEdges);
+  const [showRightPanel,setshowRightPanel]=useState(true)
 
   const onNodesChange = useCallback(
     (changes: NodeChange<FlowNode>[]) =>
@@ -63,7 +65,20 @@ export default function WorkFlowUi() {
       >
         <MiniMap pannable zoomable />
         <Panel position="top-right" className="nopan nowheel">
-          <RightPanel />
+          {showRightPanel ? (
+            <RightPanel onClose={() => setshowRightPanel(false)} />
+          ) : (
+            <div
+              role="button"
+              tabIndex={0}
+              aria-label="Open right panel"
+              onClick={() => setshowRightPanel(true)}
+              className="flex items-center gap-1 rounded-full border border-amber-200 bg-white px-3 py-2 text-sm shadow-sm hover:bg-amber-50"
+            >
+              <ChevronLeft size={14} />
+              <span>Show panel</span>
+            </div>
+          )}
         </Panel>
 
         <Background />
