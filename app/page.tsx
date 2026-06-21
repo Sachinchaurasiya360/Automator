@@ -75,8 +75,98 @@ export default function Home() {
     <div className="min-h-svh bg-[#f6f4ee] text-stone-900 [font-family:var(--font-sans)] selection:bg-stone-900 selection:text-[#f6f4ee]">
       <Navbar />
 
+      {/* Hero */}
+      <section className="border-b border-stone-900/10">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-8 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
+          <div>
+            <p className="[font-family:var(--font-mono)] text-xs uppercase tracking-[0.22em] text-stone-500">
+              Visual workflow builder
+            </p>
+            <h1 className="mt-6 max-w-4xl [font-family:var(--font-display)] text-6xl font-light leading-[0.98] tracking-tight text-stone-900 sm:text-7xl lg:text-8xl">
+              Build automations on a clean canvas.
+            </h1>
+            <p className="mt-6 max-w-xl text-base leading-7 text-stone-600">
+              Drag in triggers, connect actions, and run the workflow without
+              losing sight of how everything fits together.
+            </p>
+
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Button
+                asChild
+                size="lg"
+                className="h-13 rounded-none bg-stone-900 px-6 text-[13px] uppercase tracking-[0.18em] text-[#f6f4ee] hover:bg-stone-800"
+              >
+                <Link href="/auth/signup">
+                  Get started
+                  <ArrowRight className="ml-3 size-4" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-13 rounded-none border-stone-900/20 bg-transparent px-6 text-[13px] uppercase tracking-[0.18em] text-stone-900 hover:bg-stone-900/5"
+              >
+                <Link href="/auth/login">Sign in</Link>
+              </Button>
+            </div>
+          </div>
+
+          <div className="border border-stone-900/15 bg-[#efece3] p-5">
+            <div className="mb-5 flex items-center justify-between border-b border-stone-900/10 pb-4">
+              <p className="[font-family:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-stone-500">
+                Example flow
+              </p>
+              <p className="[font-family:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-stone-500">
+                Live canvas
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {["New form response", "Check priority", "Send Slack update"].map(
+                (label, index) => (
+                  <div
+                    key={label}
+                    className="flex items-center gap-4 border border-stone-900/15 bg-[#f6f4ee] p-4"
+                  >
+                    <span className="flex size-9 shrink-0 items-center justify-center border border-stone-900/20 [font-family:var(--font-mono)] text-xs text-stone-500">
+                      0{index + 1}
+                    </span>
+                    <div>
+                      <p className="[font-family:var(--font-display)] text-xl font-light tracking-tight text-stone-900">
+                        {label}
+                      </p>
+                      <p className="mt-1 text-sm text-stone-500">
+                        {index === 0
+                          ? "Trigger"
+                          : index === 1
+                            ? "Condition"
+                            : "Action"}
+                      </p>
+                    </div>
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+
+          <div className="grid gap-6 border-t border-stone-900/10 pt-8 sm:grid-cols-3 lg:col-span-2">
+            {["No code setup", "Visual debugging", "Reusable workflows"].map(
+              (item) => (
+                <p
+                  key={item}
+                  className="[font-family:var(--font-mono)] text-xs uppercase tracking-[0.18em] text-stone-500"
+                >
+                  {item}
+                </p>
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* Hero — type specimen / architectural plate */}
-      <section className="relative overflow-hidden border-b border-stone-900/10">
+      <section className="hidden">
         {/* faint blueprint grid */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.06]"
