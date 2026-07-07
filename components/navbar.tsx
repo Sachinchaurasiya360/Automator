@@ -60,17 +60,9 @@ export function Navbar() {
             <li>
               <Link
                 href="/auth/login"
-                className="[font-family:var(--font-mono)] text-[11px] uppercase tracking-[0.22em] text-stone-600 transition-colors hover:text-stone-900"
-              >
-                Sign in
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/auth/signup"
                 className="[font-family:var(--font-mono)] border-b border-stone-900 pb-0.5 text-[11px] uppercase tracking-[0.22em] text-stone-900 transition-opacity hover:opacity-60"
               >
-                Begin
+                Sign in
               </Link>
             </li>
           </ul>
