@@ -16,7 +16,7 @@ const navigation = [
 ];
 
 export function SiteHeader() {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const [open, setOpen] = useState(false);
 
   return (
@@ -40,7 +40,9 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          {session ? (
+          {status === "loading" ? (
+            <div className="h-9 w-20 animate-pulse rounded-[10px] bg-gray-100" />
+          ) : session ? (
             <>
               <Link
                 href="/dashboard"
@@ -94,7 +96,9 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="mt-6 flex flex-col gap-3 border-t border-gray-200 pt-5">
-            {session ? (
+            {status === "loading" ? (
+              <div className="h-10 animate-pulse rounded-[10px] bg-gray-100" />
+            ) : session ? (
               <>
                 <Link
                   href="/dashboard"

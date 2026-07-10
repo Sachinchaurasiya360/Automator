@@ -1,16 +1,14 @@
-import { Navbar } from "@/components/navbar";
-export default function RootLayout({
+import { SiteHeader } from "@/components/marketing/site-header";
+
+export default function WorkflowLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <div className=" ">
-        <Navbar />
-        
-      </div>
-      <body>{children}</body>
-    </html>
+    <div>
+      <SiteHeader />
+      {children}
+    </div>
   );
 }

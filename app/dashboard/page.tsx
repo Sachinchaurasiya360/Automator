@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar";
+import { SiteHeader } from "@/components/marketing/site-header";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
@@ -12,7 +12,7 @@ export default async function Dashboard() {
 
   return (
     <div>
-      <Navbar />
+      <SiteHeader />
       <DashboardContent />
     </div>
   );

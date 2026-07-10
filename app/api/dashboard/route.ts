@@ -16,7 +16,7 @@ export async function GET() {
       orderBy: { id: "desc" },
     });
     return NextResponse.json({ projects });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 },
