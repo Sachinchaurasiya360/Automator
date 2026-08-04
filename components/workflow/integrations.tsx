@@ -1,4 +1,19 @@
-import { Globe, Code2, Filter, Box } from "lucide-react";
+import type React from "react";
+import {
+  AtSign,
+  Bot,
+  Box,
+  Braces,
+  Clock,
+  Code2,
+  Database,
+  FileInput,
+  Filter,
+  Globe,
+  Mail,
+  MessageSquareText,
+  Webhook,
+} from "lucide-react";
 
 // ── Brand SVG logos ───────────────────────────────────────────────
 export function GoogleSheetsIcon() {
@@ -84,7 +99,7 @@ export function ClaudeIcon() {
   );
 }
 
-export type IntegrationTab = "apps" | "ai" | "tools";
+export type IntegrationTab = "triggers" | "apps" | "ai" | "tools";
 
 export type Integration = {
   name: string;
@@ -95,20 +110,33 @@ export type Integration = {
 };
 
 export const INTEGRATIONS: Record<IntegrationTab, Integration[]> = {
+  triggers: [
+    { name: "Webhook Trigger", desc: "Start from an incoming request", icon: <Webhook size={14} />, accent: "bg-cyan-50" },
+    { name: "Schedule", desc: "Run on a fixed interval", icon: <Clock size={14} />, accent: "bg-blue-50" },
+    { name: "Form Input", desc: "Collect fields from a user form", icon: <FileInput size={14} />, accent: "bg-lime-50" },
+  ],
   apps: [
+    { name: "Send Email", desc: "Send an email with workflow data", icon: <Mail size={14} />, accent: "bg-red-50" },
     { name: "Google Sheets", desc: "Read and write spreadsheet data", icon: <GoogleSheetsIcon />, accent: "bg-emerald-50" },
     { name: "Slack", desc: "Send messages and notifications", icon: <SlackIcon />, accent: "bg-rose-50" },
     { name: "Notion", desc: "Create and update pages", icon: <NotionIcon />, accent: "bg-gray-50" },
+    { name: "Database", desc: "Store or fetch records", icon: <Database size={14} />, accent: "bg-teal-50" },
   ],
   ai: [
+    { name: "Chatbot", desc: "Answer using workflow context", icon: <Bot size={14} />, accent: "bg-fuchsia-50" },
     { name: "GPT-4o", desc: "OpenAI text generation", icon: <OpenAIIcon />, accent: "bg-gray-50" },
     { name: "Gemini", desc: "Google AI generation", icon: <GeminiIcon />, accent: "bg-indigo-50" },
     { name: "Claude", desc: "Anthropic text generation", icon: <ClaudeIcon />, accent: "bg-orange-50" },
   ],
   tools: [
+    { name: "Web Scraper", desc: "Extract content from a web page", icon: <Globe size={14} />, accent: "bg-sky-50" },
     { name: "HTTP Request", desc: "Make API calls", icon: <Globe size={14} />, accent: "bg-sky-50" },
+    { name: "Formatter", desc: "Clean and reshape text or JSON", icon: <Braces size={14} />, accent: "bg-purple-50" },
     { name: "Code", desc: "Run JavaScript snippets", icon: <Code2 size={14} />, accent: "bg-violet-50" },
     { name: "Filter", desc: "Conditionally route data", icon: <Filter size={14} />, accent: "bg-amber-50" },
+    { name: "Delay", desc: "Wait before continuing", icon: <Clock size={14} />, accent: "bg-yellow-50" },
+    { name: "Message Template", desc: "Compose reusable message text", icon: <MessageSquareText size={14} />, accent: "bg-pink-50" },
+    { name: "Email Parser", desc: "Pull structured fields from email", icon: <AtSign size={14} />, accent: "bg-orange-50" },
   ],
 };
 
